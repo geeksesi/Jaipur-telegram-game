@@ -10,7 +10,7 @@ return [
      * Telegram api base url, it can be overridden
      * for self-hosted servers
      */
-    "telegram_api_url" => "https://api.telegram.org/",
+    "telegram_api_url" => env("TELEGRAM_API_URL", "https://api.telegram.org/"),
 
     /*
      * Sets Telegraph messages default parse mode
@@ -32,7 +32,7 @@ return [
      *
      * For reference, see https://core.telegram.org/bots/api#using-a-local-bot-api-server
      */
-    // 'custom_webhook_domain' => 'http://my.custom.domain',
+    "custom_webhook_domain" => "http://laravel.test",
 
     /*
      * If enabled, Telegraph dumps received
