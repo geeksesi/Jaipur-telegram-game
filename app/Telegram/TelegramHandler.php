@@ -3,8 +3,10 @@
 namespace App\Telegram;
 
 use App\Models\Bot;
+use App\Telegram\Controllers\Commands\NewGameCommand;
 use DefStudio\Telegraph\DTO\Message;
 use DefStudio\Telegraph\DTO\TelegramUpdate;
+use DefStudio\Telegraph\Facades\Telegraph;
 use DefStudio\Telegraph\Handlers\WebhookHandler;
 use Illuminate\Http\Request as HttpRequest;
 use Illuminate\Support\Facades\Request;
@@ -30,6 +32,8 @@ class TelegramHandler extends WebhookHandler
 
     public function start()
     {
-        $this->chat->markdown("*Hi* happy to be here!")->send();
+        info("ASD");
+        // $this->chat->message("hi")->send();
+        return (new NewGameCommand($this->bot))($this->message, $this->chat);
     }
 }
