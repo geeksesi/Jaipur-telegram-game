@@ -32,8 +32,6 @@ class TelegramHandler extends WebhookHandler
 
     public function start()
     {
-        info("ASD");
-        // $this->chat->message("hi")->send();
         return (new NewGameCommand($this->bot))($this->message, $this->chat);
     }
 }

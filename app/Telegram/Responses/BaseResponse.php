@@ -11,7 +11,6 @@ abstract class BaseResponse
 
     public static function make(Bot $bot, array $arguments): self
     {
-        info($bot);
         return new static($bot, ...$arguments);
     }
 
